@@ -1,6 +1,6 @@
 # Universe Simulation
 
-A 3D universe simulation application built with Java, LWJGL 3, and JOML. It visualizes stars based on data loaded from CSV files.
+A 3D universe simulation application built with Java, LWJGL 3, and JOML. It visualizes stars based on their real life data.
 
 ## Features
 
@@ -43,14 +43,6 @@ After building the project:
     *(Replace `universe-sim-1.0-SNAPSHOT.jar` with the actual JAR file name if it differs)*
 
 **Note:** Ensure the `stars.csv` and `planets.csv` files are present in the same directory where you run the JAR file, or update the file paths in `src/main/java/com/universe/UniverseSim.java` if needed. The application currently loads them relative to the execution directory.
-
-## Data Files
-
-*   **`stars.csv`:** Contains star data. Supports two formats:
-    *   **New Format:** `Hip,Hab?,Display Name,Spectral Class,Distance(pc),Xg(pc),Yg(pc),Zg(pc),AbsMag`
-    *   **Old Format:** `SystemName,Name,StellarClass,DistanceLy,RA(HH:MM:SS.ss),Dec(DD:MM:SS.ss),Mass(Solar),AbsMag`
-    *   The loader attempts to auto-detect the format based on the header.
-*   **`planets.csv`:** Contains basic planet data. Expected format: `Name,Star,DistAU,MassEarth,RadiusEarth,Rings?` (Rings? is 1/yes or 0/no).
 
 ## Controls
 
