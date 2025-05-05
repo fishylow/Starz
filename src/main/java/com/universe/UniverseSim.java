@@ -8,8 +8,6 @@ import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
 import org.lwjgl.Version;
 import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL15;
 import org.lwjgl.stb.STBTTBakedChar;
 import org.lwjgl.stb.STBTruetype;
 import org.lwjgl.stb.STBTTFontinfo;
@@ -37,6 +35,10 @@ import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
+/**
+ * Main class for the Universe Simulation application.
+ * Handles window creation, OpenGL setup, input processing, rendering loop, and data loading.
+ */
 public class UniverseSim {
 
     private long window; // Window handle
@@ -85,6 +87,9 @@ public class UniverseSim {
     private Star searchResult = null;
     private UiRenderer uiRenderer;  // Add UiRenderer
 
+    /**
+     * Starts the simulation.
+     */
     public void run() {
         System.out.println("Starting Universe Simulation with LWJGL " + Version.getVersion() + "!");
 
@@ -93,6 +98,9 @@ public class UniverseSim {
         cleanup();
     }
 
+    /**
+     * Initializes GLFW, OpenGL context, loads data, shaders, and sets up callbacks.
+     */
     public void init() {
         // Setup an error callback. The default implementation
         // will print the error message in System.err.
