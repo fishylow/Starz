@@ -146,7 +146,7 @@ public class UniverseSim {
             }
             
             // Speed control with + and - keys
-            if (key == GLFW_KEY_EQUAL && (mods & GLFW_MOD_SHIFT) != 0 && action == GLFW_PRESS) {
+            if ((key == GLFW_KEY_EQUAL && (mods & GLFW_MOD_SHIFT) != 0 && action == GLFW_PRESS) || key == GLFW_KEY_EQUAL && action == GLFW_PRESS) {
                 // Plus key (+) increases speed
                 camera.adjustSpeed(true);
                 System.out.println("Speed increased to: " + camera.movementSpeed + " ly/s");
@@ -359,7 +359,7 @@ public class UniverseSim {
         // Spawn just outside the Sun's surface along +Z
         Star sun = stars.get("sun");
         double sunRadiusLy = sun != null ? sun.getRadiusKm() * 1.057e-13 : 0.0; // 1 ly = 9.461e12 km
-        double startDistLy = sunRadiusLy + 0.01; // 0.01 ly offset
+        double startDistLy = sunRadiusLy + 0.8; // 0.01 ly offset
         camera = new Camera(new Vector3d(0.0, 0.0, startDistLy)); 
         camera.pitch = 0.0f; // Look straight ahead initially
         camera.yaw = -90.0f; // Look towards negative Z
